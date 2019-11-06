@@ -10,7 +10,7 @@ header = ['age','workclass','fnlwgt','education','education-num','marital-status
 'relationship','race','sex','capital-gain','capital-loss','hours-per-week','native-country', 'highincome']
 url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data'
 
-df = pd.read_csv("Data/adult.data", sep=',', names=header) # | pd.read_csv(url, sep=',', names=header) 
+df = pd.read_csv(url, sep=',', names=header) # | pd.read_csv(url, sep=',', names=header) 
 
 # Load the data in the dataframe df and then show the column types with the .dtypes attribute of a Pandas DataFrame
 df.dtypes

@@ -12,3 +12,4 @@ hist = df.hist()
 sd = df.describe()
 class_series = df['class'].value_counts()
 class_series.plot.bar()
+
