@@ -77,7 +77,7 @@ Workflow
     -  separe the predicting attributes X from the class attribute y
     -  split X and y into training and test
 
-part 1 - single run with default parameters
+1) part 1 - single run with default parameters
     -  initialise an estimator with the chosen model generator
     -  fit the estimator with the training part of X
     -  show the tree structure
@@ -88,7 +88,7 @@ part 1 - single run with default parameters
         -  predict the y values with the fitted estimator and the test data
             -  compare the predicted values with the true ones and compute the accuracy on the test set
 
-part 2 - multiple runs changing a parameter
+2) part 2 - multiple runs changing a parameter
     -  prepare the structure to hold the accuracy data for the multiple runs
     -  repeat for all the values of the parameter
         -  initialise an estimator with the current parameter value
@@ -97,7 +97,7 @@ part 2 - multiple runs changing a parameter
         -  compute the accuracy and store the value
     -  find the parameter value for the top accuracy
 
-part 3 - compute accuracy with cross validation
+3) part 3 - compute accuracy with cross validation
     -  prepare the structure to hold the accuracy data for the multiple runs
     -  repeat for all the values of the parameter
         -  initialise an estimator with the current parameter value
