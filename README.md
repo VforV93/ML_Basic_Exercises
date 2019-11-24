@@ -58,3 +58,4 @@ CLASSIFICATION WITH DECISION TREES
 
             The accuracy of the pruned tree on training set is 75.0%
             The accuracy of the pruned tree on test set is 76.6%
+
