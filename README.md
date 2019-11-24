@@ -42,25 +42,27 @@ CLASSIFICATION WITH DECISION TREES
     
     - Basics of the API
         The steps in using the Scikit-Learn estimator API are as follows 
-        1- Choose a class of model by importing the appropriate estimator class from Scikit-Learn.
-        2- Choose model hyperparameters by instantiating this class with desired values.
-        3- Arrange data into a features matrix and target vector.
-        4- Fit the model to your data by calling the fit() method of the model instance.
-        5- Apply the Model to new data
+        - Choose a class of model by importing the appropriate estimator class from Scikit-Learn.
+        - Choose model hyperparameters by instantiating this class with desired values.
+        - Arrange data into a features matrix and target vector.
+        - Fit the model to your data by calling the fit() method of the model instance.
+        - Apply the Model to new data
 
 2) Pruning the Decision Tree
     In this example we are directly given two different datasets, one will be used for training, the other for testing. We will start training the model with the training data, then testing it with the test data. Then we will observe the resulting tree, and try to improve the result with pruning.
-        1- Train the full tree
-        2- Observe the tree
+        -  Train the full tree
+        -  Observe the tree
             Try to understand better the tree by plotting only the first two levels under the root. This is obtained with the parameter max_depth = 3. Remember that here we are not changing the tree, but only displaying the upper part of the tree.
-        3- Pruned tree
+        -  Pruned tree
             From the observation of the tree, choose an appropriate value for max_dept and redo the training using the parameter max_depth = max_depth in the fit method. Compute the accuracy on the training set, and then on the test set.
 
             The accuracy of the pruned tree on training set is 75.0%
             The accuracy of the pruned tree on test set is 76.6%
 
 CLASSIFICATION WITH HYPERPARAMETER TUNING
+
 aim:
+
 Show classification with different strategies for the tuning and evaluation of the classifier 1. simple holdout 2. holdout with validation train and validate repeatedly changing a hyperparameter, to find the value giving the best score, then test for the final score 3. cross validation on training set, then score on test set 4. bagging it is an ensemble method made available in scikit-learn
 
 NB: You should not interpret those experiments as a way to find the best evaluation method, but simply as examples of how to do the evaluation.
@@ -70,36 +72,36 @@ If you look at the final report, methods 1 to 3 are meant for increasing evaluat
 Method 4 is on a different dimension, it simply shows that a good result can be obtained with an ensemble of simpler classifiers (the best value for the hyperparameter max_depth is smaller than in the other cases)
 
 Workflow
-    - download the data
-    - drop the useless data
-    - separe the predicting attributes X from the class attribute y
-    - split X and y into training and test
+    -  download the data
+    -  drop the useless data
+    -  separe the predicting attributes X from the class attribute y
+    -  split X and y into training and test
 
 part 1 - single run with default parameters
-    initialise an estimator with the chosen model generator
-    fit the estimator with the training part of X
-    show the tree structure
+    -  initialise an estimator with the chosen model generator
+    -  fit the estimator with the training part of X
+    -  show the tree structure
     part 1.1
-        predict the y values with the fitted estimator and the train data
-            compare the predicted values with the true ones and compute the accuracy on the training set
+        -  predict the y values with the fitted estimator and the train data
+            -  compare the predicted values with the true ones and compute the accuracy on the training set
     part 1.2
-        predict the y values with the fitted estimator and the test data
-            compare the predicted values with the true ones and compute the accuracy on the test set
+        -  predict the y values with the fitted estimator and the test data
+            -  compare the predicted values with the true ones and compute the accuracy on the test set
 
 part 2 - multiple runs changing a parameter
-    prepare the structure to hold the accuracy data for the multiple runs
-    repeat for all the values of the parameter
-        initialise an estimator with the current parameter value
-        fit the estimator with the training part
-        predict the class for the test part
-        compute the accuracy and store the value
-    find the parameter value for the top accuracy
+    -  prepare the structure to hold the accuracy data for the multiple runs
+    -  repeat for all the values of the parameter
+        -  initialise an estimator with the current parameter value
+        -  fit the estimator with the training part
+        -  predict the class for the test part
+        -  compute the accuracy and store the value
+    -  find the parameter value for the top accuracy
 
 part 3 - compute accuracy with cross validation
-    prepare the structure to hold the accuracy data for the multiple runs
-    repeat for all the values of the parameter
-        initialise an estimator with the current parameter value
-        compute the accuracy with cross validation and store the value
-    find the parameter value for the top accuracy
-    fit the estimator with the entire X
-    show the resulting tree and classification report 
+    -  prepare the structure to hold the accuracy data for the multiple runs
+    -  repeat for all the values of the parameter
+        -  initialise an estimator with the current parameter value
+        -  compute the accuracy with cross validation and store the value
+    -  find the parameter value for the top accuracy
+    -  fit the estimator with the entire X
+    -  show the resulting tree and classification report 
