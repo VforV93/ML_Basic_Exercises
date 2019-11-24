@@ -104,4 +104,13 @@ Workflow
         -  compute the accuracy with cross validation and store the value
     -  find the parameter value for the top accuracy
     -  fit the estimator with the entire X
-    -  show the resulting tree and classification report 
+    -  show the resulting tree and classification report
+
+4) part 4 - compute accuracy with bagging validation
+    -  prepare the structure to hold the accuracy data for the multiple runs
+    -  repeat for all the values of the parameter
+        -  initialise an estimator with the current parameter value
+        -  compute the accuracy with bagging validation and store the value
+    -  find the parameter value for the top accuracy
+    -  fit the estimator with the entire X
+    -  show the resulting tree and classification report
