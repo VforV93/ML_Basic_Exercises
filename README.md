@@ -59,3 +59,47 @@ CLASSIFICATION WITH DECISION TREES
             The accuracy of the pruned tree on training set is 75.0%
             The accuracy of the pruned tree on test set is 76.6%
 
+CLASSIFICATION WITH HYPERPARAMETER TUNING
+aim:
+Show classification with different strategies for the tuning and evaluation of the classifier 1. simple holdout 2. holdout with validation train and validate repeatedly changing a hyperparameter, to find the value giving the best score, then test for the final score 3. cross validation on training set, then score on test set 4. bagging it is an ensemble method made available in scikit-learn
+
+NB: You should not interpret those experiments as a way to find the best evaluation method, but simply as examples of how to do the evaluation.
+
+If you look at the final report, methods 1 to 3 are meant for increasing evaluation reliability, method 3 is the more reliable, but it requires several repetitions for cross validation, therefore, if the learning method is expensive, it requires long processing time. If, due to intrinsic variation caused by random sampling, it turns out that methods 1 or 2 give higher accuracy, this means simply that the forecast towards generalisation is less reliable.
+
+Method 4 is on a different dimension, it simply shows that a good result can be obtained with an ensemble of simpler classifiers (the best value for the hyperparameter max_depth is smaller than in the other cases)
+
+Workflow
+    - download the data
+    - drop the useless data
+    - separe the predicting attributes X from the class attribute y
+    - split X and y into training and test
+
+part 1 - single run with default parameters
+    initialise an estimator with the chosen model generator
+    fit the estimator with the training part of X
+    show the tree structure
+    part 1.1
+        predict the y values with the fitted estimator and the train data
+            compare the predicted values with the true ones and compute the accuracy on the training set
+    part 1.2
+        predict the y values with the fitted estimator and the test data
+            compare the predicted values with the true ones and compute the accuracy on the test set
+
+part 2 - multiple runs changing a parameter
+    prepare the structure to hold the accuracy data for the multiple runs
+    repeat for all the values of the parameter
+        initialise an estimator with the current parameter value
+        fit the estimator with the training part
+        predict the class for the test part
+        compute the accuracy and store the value
+    find the parameter value for the top accuracy
+
+part 3 - compute accuracy with cross validation
+    prepare the structure to hold the accuracy data for the multiple runs
+    repeat for all the values of the parameter
+        initialise an estimator with the current parameter value
+        compute the accuracy with cross validation and store the value
+    find the parameter value for the top accuracy
+    fit the estimator with the entire X
+    show the resulting tree and classification report 
