@@ -114,3 +114,13 @@ Workflow
     -  find the parameter value for the top accuracy
     -  fit the estimator with the entire X
     -  show the resulting tree and classification report
+
+
+USING SEVERAL CLASSIFIERS AND TUNING PARAMETERS - PARAMETERS GRID
+Example of usage of the model selection features of scikit-learn and comparison of several classification methods.
+1. import a sample dataset
+2. split the dataset into two parts: train(train and validation - i.e. for development) and test. The fraction of test data will be ts (a value of your choice between 0.2 and 0.5)
+3. the function GridSearchCV iterates a cross validation experiment to train and test a model with different combinations of paramater values - for each parameter we set a list of values to test, the function will generate all the combinations - we choose a score function which will be used for the optimization - e.g. accuracy_score, precision_score, cohen_kappa_score, f1_score, see this page for reference - the output is a dictionary containing - the set of parameters which maximize the score - the test scores
+4. prepare the parameters for the grid - it is a list of dictionaries
+5. set the parameters by cross validation and the score functions to choose from
+6. Loop on scores and, for each score, loop on the model labels (see details below)
